@@ -6,9 +6,8 @@
 
 use yii\easyii\modules\article\api\Article;
 
-$this->title = 'ЕШСС - спортивное служение';
+$this->title = 'Контакты';
 ?>
 <div class="jumbotron">
-    <?= Article::get('page-aboutus')->model->text ?>
+    <?= Article::get('page-contacts')->model->text ?>
 </div>
-

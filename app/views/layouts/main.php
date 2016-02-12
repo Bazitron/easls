@@ -1,6 +1,8 @@
 <?php
 use yii\helpers\Html;
 use yii\easyii\modules\article\api\Article;
+use yii\widgets\Menu;
+
 $asset = \app\assets\AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -24,14 +26,21 @@ $asset = \app\assets\AppAsset::register($this);
 
         <div class="header clearfix">
             <nav>
-                <ul class="nav nav-pills pull-right">
-                    <li role="presentation" class="active"><a href="/">Главная</a></li>
-                    <li role="presentation"><?= Html::a('О нас',['/about'])?></li>
-                    <li role="presentation"><a href="#">Медиа</a></li>
-                    <li role="presentation"><?= Html::a(Article::last(1,['category_id'=>4])->model->title,['/easls','s'=>Article::last(1,['category_id'=>4])->model->slug])?></li>
-                    <li role="presentation"><a href="#">Другие тренинги</a></li>
-                    <li role="presentation"><a href="#">Контакты</a></li>
-                </ul>
+                <?php
+                echo Menu::widget([
+                    'items' => [
+                        ['label' => 'Главная', 'url' => ['main/index']],
+                        ['label' => 'О нас', 'url' => ['main/about']],
+                        ['label' => 'Медиа', 'url' => ['main/media']],
+                        ['label' => Article::last(1, ['category_id' => 4])->model->title, 'url' => ['main/easls', 's' => Article::last(1, ['category_id' => 4])->model->slug]],
+                        ['label' => 'Другие тренинги', 'url' => ['main/other_trainings']],
+                        ['label' => 'Контакты', 'url' => ['main/contacts']],
+                    ],
+                    'options' => [
+                        'class' => 'nav nav-pills pull-right'
+                    ],
+                ]);
+                ?>
             </nav>
             <h3 class="text-muted">ЕШСС</h3>
         </div>
@@ -39,15 +48,14 @@ $asset = \app\assets\AppAsset::register($this);
 
 
         <footer class="footer">
-            <p>&copy; EaSLS 2015</p>
+            <p>&copy; EaSLS <?= date('Y',time()) ?></p>
+            <div id="back-to-main">
+                <?= HTML::tag('a', HTML::img('/style/img/logo-training.png'), ['href' => 'http://traininginsport.ru']) ?>
+            </div>
         </footer>
 
-    </div> <!-- /container -->
-
-
-
-
-
+    </div>
+    <!-- /container -->
     <?php $this->endBody() ?>
     </body>
     </html>

@@ -22,7 +22,10 @@ $config = [
             'rules' => [
                 '/' => 'main/index',
                 'about' => 'main/about',
+                'media' => 'main/media',
                 'easls' => 'main/easls',
+                'contacts' => 'main/contacts',
+                'other_trainings' => 'main/other_trainings',
                 'request-password-reset' => 'site/request-password-reset',
                 'reset-password' => 'site/reset-password',
             ],
