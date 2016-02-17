@@ -43,7 +43,9 @@ $asset = \app\assets\AppAsset::register($this);
                 ]);
                 ?>
             </nav>
-            <h3 class="text-muted">ЕШСС</h3>
+            <h3 class="text-muted">
+                <div class="main-logo white-overlay"></div>
+            </h3>
         </div>
         <?= $content ?>
 
