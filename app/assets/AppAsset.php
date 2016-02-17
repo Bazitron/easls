@@ -3,13 +3,13 @@ namespace app\assets;
 
 class AppAsset extends \yii\web\AssetBundle
 {
-    public $sourcePath = '@web/media';
+    public $baseUrl = '@web';
     public $css = [
-//        'css/styles.css',
-        'css/jumbotron-narrow.css'
+        'style/css/style.css',
+        'style/css/jumbotron-narrow.css',
     ];
     public $js = [
-        'js/scripts.js'
+        'style/js/scripts.js',
     ];
     public $depends = [
         'yii\web\JqueryAsset',

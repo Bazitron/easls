@@ -4,6 +4,7 @@ use yii\easyii\modules\article\api\Article;
 use yii\widgets\Menu;
 
 $asset = \app\assets\AppAsset::register($this);
+
 ?>
 <?php $this->beginPage() ?>
     <!DOCTYPE html>
@@ -48,9 +49,10 @@ $asset = \app\assets\AppAsset::register($this);
 
 
         <footer class="footer">
-            <p>&copy; EaSLS <?= date('Y',time()) ?></p>
-            <div id="back-to-main">
-                <?= HTML::tag('a', HTML::img('/style/img/logo-training.png'), ['href' => 'http://traininginsport.ru']) ?>
+            <div style="float:left;">&copy; EaSLS <?= date('Y',time()) ?></div>
+
+            <div style="float:right;" id="back-to-main">
+                <?= HTML::tag('a', HTML::img('/style/img/logo-training.png',['class' => 'training-logo']), ['href' => 'http://trainingInSport.ru']) ?>
             </div>
         </footer>
 
