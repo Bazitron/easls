@@ -4,8 +4,13 @@
  * @version 1.0
  */
 
+use yii\easyii\modules\gallery\api\Gallery;
+
 $this->title = 'Медиа';
 ?>
 <div class="jumbotron">
-    <h2>Страница в разработке</h2>
+    <?php foreach(Gallery::last(6) as $photo) : ?>
+        <?= $photo->box(180, 135) ?>
+    <?php endforeach;?>
+    <?php Gallery::plugin() ?>
 </div>
